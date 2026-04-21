@@ -1,0 +1,31 @@
+{
+    "name": "google-maps-accounting-scraper",
+    "version": "1.0.0",
+    "description": "Scraper for accounting companies on Google Maps",
+    "main": "src/index.js",
+    "type": "module",
+    "scripts": {
+        "start": "node src/index.js",
+        "scrape:eu": "node src/index.js",
+        "scrape:cork": "node src/index.js --existing-csv data/companies_raw_2026-03-29T12-06-08-335Z.csv",
+        "scrape:debug": "node --inspect-brk src/index.js",
+        "dedup": "node deduplicate-csv.js",
+        "enrich:emails": "node email-enricher.js",
+        "segment:eu": "node segment-eu-targets.js"
+    },
+    "keywords": [
+        "google-maps",
+        "scraper",
+        "accounting",
+        "puppeteer"
+    ],
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "dotenv": "^16.3.1",
+        "puppeteer-core": "^22.15.0"
+    },
+    "devDependencies": {
+        "prettier": "^3.1.1"
+    }
+}
